@@ -1,10 +1,10 @@
-package org.example;
+package com.psxjoy.excel;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class Empty
 {
     public static void main( String[] args )
     {

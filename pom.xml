@@ -9,7 +9,7 @@
     <name>fastexcel-parent</name>
     <description>fastexcel is a excel handle tool written in Java</description>
     <inceptionYear>2024</inceptionYear>
-    <version>${revision}</version>
+    <version>${reversion}</version>
 
     <modules>
         <module>fastexcel</module>
@@ -20,7 +20,7 @@
 
 
     <properties>
-        <revision>1.0-SNAPSHOT</revision>
+        <reversion>1.0-SNAPSHOT</reversion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
         <gpg.skip>true</gpg.skip>
@@ -28,75 +28,77 @@
         <maven.test.skip>true</maven.test.skip>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.psxjoy</groupId>
-            <artifactId>fastexcel</artifactId>
-            <version>${revision}</version>
-        </dependency>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.psxjoy</groupId>
+                <artifactId>fastexcel</artifactId>
+                <version>${reversion}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.psxjoy</groupId>
-            <artifactId>fastexcel-core</artifactId>
-            <version>${revision}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.psxjoy</groupId>
+                <artifactId>fastexcel-core</artifactId>
+                <version>${reversion}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.psxjoy</groupId>
-            <artifactId>fastexcel-support</artifactId>
-            <version>${revision}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.psxjoy</groupId>
+                <artifactId>fastexcel-support</artifactId>
+                <version>${reversion}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>4.1.2</version>
-        </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>4.1.2</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>4.1.2</version>
-        </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>4.1.2</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml-schemas</artifactId>
-            <version>4.1.2</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-csv</artifactId>
-            <version>1.8</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.32</version>
-        </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-schemas</artifactId>
+                <version>4.1.2</version>
+            </dependency>
 
 
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>3.9.9</version>
-        </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-csv</artifactId>
+                <version>1.8</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
-        </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.32</version>
+            </dependency>
 
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.11.0</version>
-        </dependency>
-    </dependencies>
+
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>3.9.9</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.20</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.11.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>
