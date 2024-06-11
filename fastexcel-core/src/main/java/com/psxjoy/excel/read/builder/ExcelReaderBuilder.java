@@ -1,11 +1,12 @@
 package com.psxjoy.excel.read.builder;
 
+import com.psxjoy.excel.read.metadata.ReadBasicParameter;
 import com.psxjoy.excel.read.metadata.ReadWorkBook;
 
 import java.io.File;
 import java.io.InputStream;
 
-public class ExcelReaderBuilder {
+public class ExcelReaderBuilder extends AbstractExcelReaderParameterBuilder<ExcelReaderBuilder, ReadBasicParameter> {
 
     private final ReadWorkBook readWorkBook;
 
@@ -26,5 +27,10 @@ public class ExcelReaderBuilder {
     public ExcelReaderBuilder file(InputStream inputStream) {
         readWorkBook.setInputStream(inputStream);
         return this;
+    }
+
+    @Override
+    protected ReadBasicParameter parameter() {
+        return readWorkBook;
     }
 }
