@@ -1,2 +1,2 @@
 # FastExcel
-Learning from EasyExcel, better for developer.
+Learning from EasyExcel, better for developers.
