@@ -23,6 +23,14 @@ public class FastExcelFactory {
 
     public static ExcelReaderBuilder read(File file, Class head, ReadListener readListener) {
         ExcelReaderBuilder excelReaderBuilder = new ExcelReaderBuilder();
+        excelReaderBuilder.file(file);
+        if(head!=null) {
+
+        }
+        if(readListener!=null) {
+
+        }
+
         return excelReaderBuilder;
     }
 
@@ -37,6 +45,7 @@ public class FastExcelFactory {
 
     public static ExcelReaderBuilder read(String pathName, Class head, ReadListener readListener) {
         ExcelReaderBuilder excelReaderBuilder = new ExcelReaderBuilder();
+        excelReaderBuilder.file(pathName);
         return excelReaderBuilder;
     }
 
@@ -51,6 +60,7 @@ public class FastExcelFactory {
 
     public static ExcelReaderBuilder read(InputStream inputStream, Class head, ReadListener readListener) {
         ExcelReaderBuilder excelReaderBuilder = new ExcelReaderBuilder();
+        excelReaderBuilder.file(inputStream);
         return excelReaderBuilder;
     }
 
