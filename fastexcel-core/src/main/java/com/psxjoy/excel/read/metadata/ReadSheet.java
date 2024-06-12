@@ -9,4 +9,12 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class ReadSheet extends ReadBasicParameter {
+
+    private Integer sheetNo;
+
+    private String sheetName;
+
+    public ReadSheet(){}
+
+
 }

@@ -1,5 +1,6 @@
 package com.psxjoy.excel.read.builder;
 
+import com.psxjoy.excel.ExcelReader;
 import com.psxjoy.excel.read.metadata.ReadBasicParameter;
 import com.psxjoy.excel.read.metadata.ReadWorkBook;
 
@@ -20,6 +21,13 @@ public class ExcelReaderBuilder extends AbstractExcelReaderParameterBuilder<Exce
         return this;
     }
 
+    public ExcelReader build() {
+        return new ExcelReader(readWorkBook);
+    }
+
+
+
+
     public ExcelReaderBuilder file(String pathName) {
         return file(new File(pathName));
     }
@@ -28,6 +36,11 @@ public class ExcelReaderBuilder extends AbstractExcelReaderParameterBuilder<Exce
         readWorkBook.setInputStream(inputStream);
         return this;
     }
+
+    public ExcelReaderSheetBuilder sheet(Integer sheetNo,String sheetName) {
+        ExcelReaderSheetBuilder excelReaderSheetBuilder = new ExcelReaderSheetBuilder();
+    }
+
 
     @Override
     protected ReadBasicParameter parameter() {
