@@ -39,6 +39,13 @@ public class ExcelReaderBuilder extends AbstractExcelReaderParameterBuilder<Exce
 
     public ExcelReaderSheetBuilder sheet(Integer sheetNo,String sheetName) {
         ExcelReaderSheetBuilder excelReaderSheetBuilder = new ExcelReaderSheetBuilder();
+        if(sheetNo != null) {
+            excelReaderSheetBuilder.sheetNo(sheetNo);
+        }
+        if(sheetName!=null) {
+            excelReaderSheetBuilder.sheetName(sheetName);
+        }
+        return excelReaderSheetBuilder;
     }
 
 

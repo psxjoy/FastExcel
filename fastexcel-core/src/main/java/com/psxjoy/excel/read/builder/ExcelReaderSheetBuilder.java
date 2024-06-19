@@ -19,6 +19,16 @@ public class ExcelReaderSheetBuilder extends AbstractExcelReaderParameterBuilder
         this.excelReader = excelReader;
     }
 
+
+    public ExcelReaderSheetBuilder sheetNo(Integer sheetNo) {
+        readSheet.setSheetNo(sheetNo);
+        return this;
+    }
+    public ExcelReaderSheetBuilder sheetName(String sheetName) {
+        readSheet.setSheetName(sheetName);
+        return this;
+    }
+
     @Override
     protected ReadSheet parameter() {
         return readSheet;
