@@ -2,6 +2,7 @@ package com.psxjoy.excel.support;
 
 
 import com.psxjoy.excel.exception.ExcelAnalysisException;
+import com.psxjoy.excel.exception.ExcelCommonException;
 import com.psxjoy.excel.read.metadata.ReadWorkBook;
 import com.psxjoy.excel.util.StringUtils;
 import lombok.Getter;
@@ -55,12 +56,6 @@ public enum ExcelTypeEnum {
                 if (!file.exists()) {
                     throw new ExcelAnalysisException("File  " + file.getAbsolutePath() + " not exists.");
                 }
-                if (!StringUtils.isEmpty(readWorkBook.getPassword())) {
-                    try (BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file))) {
-                        //TODO
-                        return recognitionExcelType(bufferedInputStream);
-                    }
-                }
                 String fileName = file.getName();
                 if (fileName.endsWith(XLSX.getValue())) {
                     return XLSX;
@@ -68,6 +63,9 @@ public enum ExcelTypeEnum {
                     return XLS;
                 } else if (fileName.endsWith(CSV.getValue())) {
                     return CSV;
+                }
+                try (BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file))) {
+                    return recognitionExcelType(bufferedInputStream);
                 }
             }
             if (!inputStream.markSupported()) {
